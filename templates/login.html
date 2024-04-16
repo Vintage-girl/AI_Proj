@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SentiBot Login</title>
+  <link rel="website icon" type="jpg" href="static\SentiBot_Logo.png">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet"> <!-- Added link to Lato font -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;700&display=swap" rel="stylesheet"> <!-- Added link to Oswald font -->
+
+  <body>
+    <div class="container">
+      <div class="image-container">
+        <img src="../static/bluewhiteleaf.png" class="image">
+      </div>
+      <div class="wrapper">
+        <form action="{{ url_for('login') }}" method="POST">
+          <h1>Login</h1>
+          <div class="input-box">
+            <input type="text" placeholder="Username" name="username" required>
+            <i class='bx bxs-user'></i>
+          </div>
+          <div class="input-box">
+            <input type="password" placeholder="Password" name="password" required>
+            <i class='bx bxs-lock-alt' ></i>
+          </div>
+          <div class="remember">
+            <label><input type="checkbox">Remember Me</label>
+          </div>
+          <button type="submit" class="btn">Login</button>
+          <div class="register-link">
+            <p>Don't have an account? <a href="{{ url_for('signup') }}">Sign Up</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      font-family:'Muli',sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-image: url("../static/galaxy.jpg");
+      background-size: cover;
+      background-position: center;
+      overflow: hidden;
+    }
+
+    .image-container {
+      position: relative;
+      width: 40%; /* Adjust the width of the image container */
+      margin-right: 5%; /* Adjust the margin as needed */
+      margin-left:-5%
+    }
+
+    .image {
+      width: 90%; /* Adjust the width of the image */
+      height: auto; /* Maintain aspect ratio */
+      border-radius: 15px;
+      /* Add any additional styling for the image */
+    }
+
+    /* Style for contact button */
+    .contact-button {
+      position: absolute;
+      bottom: 10px; /* Adjust vertical position as needed */
+      left: 31.5%;
+      transform: translateX(-50%);
+      display: inline-block;
+      width: auto; /* Adjust width automatically based on content */
+      height: 50px;
+      line-height: 50px; /* Adjust line height to vertically center the text */
+      text-align: center;
+      color: #355973; /* Set font color to black */
+      border-radius: 50%;
+      cursor: pointer;
+      transition: all .2s ease-in-out;
+    }
+
+    .contact-button:hover {
+      color: skyblue;
+    }
+
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between; /* Align items evenly along the main axis */
+      width: 80%; /* Adjust this width as needed */
+      max-width: 1200px; /* Limit maximum width */
+    }
+    .wrapper {
+      width: 50%; /* Adjust login box width */
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, .2);
+      backdrop-filter: blur(9px);
+      color: #fff;
+      border-radius: 12px;
+      padding: 60px;
+      margin-left:5%;
+    }
+    img {
+      width: auto; /* Adjust the percentage as needed */
+      height: 80%; /* Maintain aspect ratio */
+      margin-left: -14%; /* Adjusted left margin */
+    }
+    .wrapper h1 {
+      font-family: 'Marcellus',serif;
+      font-size: 36px;
+      text-align: center;
+    }
+    .wrapper .input-box {
+      position: relative;
+      width: 100%;
+      height: 50px;
+      margin: 30px 0;
+    }
+    .input-box input {
+      width: 100%;
+      height: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+      border: 2px solid rgba(255, 255, 255, .2);
+      border-radius: 40px;
+      font-size: 16px;
+      color: #fff;
+      padding: 20px 45px 20px 20px;
+    }
+    .input-box input::placeholder {
+      color: #fff;
+    }
+    .input-box i {
+      position: absolute;
+      right: 20px;
+      top: 30%;
+      transform: translate(-50%);
+      font-size: 20px;
+    }
+    .wrapper .remember {
+      display: flex;
+      justify-content: space-between;
+      font-size: 14.5px;
+      margin: -15px 0 15px;
+    }
+    .remember label input {
+      accent-color: #fff;
+      margin-right: 3px;
+    }
+    .remember a {
+      color: #fff;
+      text-decoration: none;
+    }
+    .remember a:hover {
+      text-decoration: underline;
+    }
+    .wrapper .btn {
+      width: 100%;
+      height: 45px;
+      background: #fff;
+      border: none;
+      outline: none;
+      border-radius: 40px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+      cursor: pointer;
+      font-size: 16px;
+      color: #333;
+      font-weight: 600;
+    }
+    .wrapper .register-link {
+      font-size: 14.5px;
+      text-align: center;
+      margin: 20px 0 15px;
+    }
+    .register-link p a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .register-link p a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+</html>

@@ -1,0 +1,68 @@
+/* styles.css */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-image: url("../static/galaxy.jpg"); /* Background image URL */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+}
+
+.container {
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Arrange items vertically */
+    justify-content: center; /* Center items vertically */
+    align-items: center; /* Center items horizontally */
+    width: 50%; /* Adjust login box width */
+    background: transparent;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(4px);
+    color: #fff;
+    border-radius: 12px;
+    padding: 60px;
+    margin-left: 5%;
+}
+
+h1 {
+    margin-top: 0;
+    color: #fff; /* White text color */
+}
+
+.home-link {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 9999; /* Ensure it's above other content */
+}
+
+.home-link i {
+    font-size: 24px; /* Adjust icon size */
+    color: #ffffff; /* Icon color */
+}
+
+#video-feed {
+    width: 80%;
+    max-width: 80%; /* Adjust max-width to fit container */
+    height: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    display: none; /* Initially hidden */
+}
+
+.btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff; /* Blue button color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

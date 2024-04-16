@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SentiBot Home</title>
+  <link rel="website icon" type="jpg" href="static\SentiBot_Logo.png">
+  <link rel="stylesheet" type="text/css" href="static/home.css">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Muli&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet"> <!-- Added link to Lato font -->
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;700&display=swap" rel="stylesheet"> <!-- Added link to Oswald font -->
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href="{{ url_for('home') }}" class="logo-link">
+            <img src="static\SentiBot_Logo.png" alt="SentiBot Logo" class="logo">
+            <span class="logo-text">Soberity</span> <!-- Add this line -->
+          </a>          
+        </li>
+        <li><a href="{{ url_for('login') }}" class="btn-link"><i class='bx bx-log-out'></i> Log Out</a></li>
+        <!-- Add more navigation items as needed -->
+      </ul>
+    </nav>
+  </header>
+  
+
+  <section>
+    <div class="black-container"> <!-- Add this div for the black transparent container -->
+      <h1>Welcome to Sober's World</h1>
+      <div class="button-container">
+        <button class="Btn" onclick="window.location.href='/index'" data-text="Sober Detection&#10;">Sober Detection</button>
+      </div>
+    </div>
+    <!-- Add more content here -->
+  </section>
+
+  <footer class="footer-distributed">
+
+    <div class="footer-left">
+        <h3>Senti<span>Bot</span> </h3>
+
+        <p class="footer-links">
+            <a href="{{ url_for('home') }}">Home</a>
+        </p>
+
+        <p class="footer-company-name">Copyright © 2021 <strong>SentiBot</strong> All rights reserved</p>
+    </div>
+
+    <div class="footer-center">
+        <div>
+            <i class="fas fa-map-marker"></i>   
+            <p>
+              <a href="https://earth.google.com/web/search/Bennett+University,+Greater+Noida,+Uttar+Pradesh/@28.45064516,77.58472879,226.74723183a,949.59171568d,35y,49.62177551h,60t,0r/data=CmsaQRI7CiUweDM5MGNiZjk0ZGViNmJjMzk6MHg3YmE2YmVkYzlhMmI1MzdmKhJCZW5uZXR0IFVuaXZlcnNpdHkYAiABIiYKJAkg_ed9Hjo0QBEg_ed9Hjo0wBk7AjBAVW9JQCE5AjBAVW9JwDoDCgEw">Greater Noida, Uttar Pradesh</a>
+            </p>
+        </div>
+
+        <div>
+            <i class="fas fa-phone"></i>
+            <p>+91 7004230852</p>
+        </div>
+        <div>
+            <i class="fas fa-envelope"></i>
+            <p><a href="mailto:sentibot007@gmail.com">sentibot007@gmail.com</a></p>
+        </div>
+    </div>
+    <div class="footer-right">
+        <p class="footer-company-about">
+            <span>About</span>
+            <strong>SentiBot</strong> is a cutting-edge web application with the goal of revolutionizing user engagement via distinctive voice and video interactions. Through the smooth integration of speech-to-text and video processing technologies, this study presents a method for sentiment analysis. Users are able to translate their thoughts and feelings into text in real time while speaking.
+        </p>
+        <div class="footer-icons">
+            <a href="https://github.com/Aditya-0009/SentiBot"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/_ig._.adi_"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/posts/aditya-raj-007kj_sentibot-ai-virtualfriend-activity-7167976117423816704-SezL?utm_source=share&utm_medium=member_desktop"><i class="fab fa-linkedin"></i></a>
+            <a href="https://discord.gg/PQVrJaTjJJ"><i class="fab fa-discord"></i></a>
+            <a href="https://www.youtube.com/channel/UCJ8O-HV7JiprpQVbuG51qSw"><i class="fab fa-youtube"></i></a>
+        </div>
+    </div>
+  </footer>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", function() {
+        var footer = document.querySelector(".footer-distributed");
+        var body = document.body;
+        var windowHeight = window.innerHeight;
+        var footerHeight = footer.offsetHeight;
+    
+        body.style.minHeight = windowHeight + footerHeight + "px";
+    
+        window.addEventListener("scroll", function() {
+            var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop;
+    
+            if (scrollTop + windowHeight >= body.scrollHeight) {
+                footer.classList.add("visible");
+            } else {
+                footer.classList.remove("visible");
+            }
+        });
+    });
+  </script>
+   
+    
+</body>
+</html>
